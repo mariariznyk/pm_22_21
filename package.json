@@ -11,5 +11,8 @@
     "url": "git+https://github.com/mariariznyk/pm_22_21.git"
   },
   "author": "Mariia Riznyk",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
 }
