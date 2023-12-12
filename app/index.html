@@ -3,8 +3,575 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/index.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+          crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
 <body>
-    <p>test paragraph</p>
+   <div class="top">
+       <div class="left-top">
+           <img class="first-img" src="img/cisco.png">
+           <img class="second-img" src="img/menu.png">
+       </div>
+       <div class="right-top">
+           <div class="search">
+               <img class="imsearch" src="img/mglass.png">
+           </div>
+           <div class="notif">
+               <img class="bell" src="img/bell.png">
+           </div>
+           <div class="myacc">
+               <img class="myphoto" src="img/mypic.png">
+               <div class="mytext"><p>MARIA RIZNYK Administrator</p></div>
+               <img class="pointer" src="img/pointer.png">
+           </div>
+       </div>
+   </div>
+    <div class="root-wrapper">
+        <div class="sidebar">
+            <nav class="navbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <div class="nav-pic-link">
+                            <img class="img1" src="img/dash.png">
+                            <a class="nav-link active" aria-current="page" href="#">
+                                Dashboard
+                            </a>
+                        </div>
+                        <img id="myImage1" class="plus" src="img/plus.png" onclick="performActions(event, 'dashboard', 'myImage1')">
+                    </li>
+
+                    <div class="button-slide" id="dashboardButtons" style="display: none;">
+                        <div class="drop-menu"><p>Home</p></div>
+                        <div class="drop-menu"><p>My account</p></div>
+                        <div class="drop-menu"><p>Friends</p></div>
+                    </div>
+                    <li class="nav-item">
+                        <div class="nav-pic-link">
+                            <img class="img1" src="img/message.png">
+                            <a class="nav-link" href="#">
+                                Messages
+                            </a>
+                        </div>
+                        <img id='myImage2' class="plus" src="img/plus.png" onclick="performActions(event, 'message', 'myImage2')">
+                    </li>
+
+                    <div class="button-slide" id="messageButtons" style="display: none;">
+                        <div class="drop-menu"><p>Sentbox</p></div>
+                        <div class="drop-menu"><p>Inbox</p></div>
+                        <div class="drop-menu"><p>Draft</p>t</div>
+                    </div>
+                    <li class="nav-item">
+                        <div class="nav-pic-link">
+                            <img class="img1" src="img/compass.png">
+                            <a class="nav-link" href="#">
+                                Overview
+                            </a></div>
+                        <img id="myImage3" class="plus" src="img/plus.png" onclick="performActions(event, 'overview', 'myImage3')">
+                    </li>
+
+                    <div class="button-slide" id="overviewButtons" style="display: none;">
+                        <div class="drop-menu"><p>News</p></div>
+                        <div class="drop-menu"><p>Business</p></div>
+                        <div class="drop-menu"><p>Subscriptions</p></div>
+                    </div>
+                    <li class="nav-item">
+                        <div class="nav-pic-link">
+                            <img class="img1" src="img/stats.png">
+                            <a class="nav-link" href="#">
+                                Statistics
+                            </a> </div>
+                        <img id="myImage4" class="plus" src="img/plus.png" onclick="performActions(event, 'statistics', 'myImage4')">
+                    </li>
+
+                    <div class="button-slide" id="statisticsButtons" style="display: none;">
+                        <div class="drop-menu"><p>Views</p></div>
+                        <div class="drop-menu"><p>Reviews</p></div>
+                        <div class="drop-menu"><p>Production sold</p></div>
+                    </div>
+                    <li class="nav-item">
+                        <div class="nav-pic-link">
+                            <img class="img1" src="img/page.png">
+                            <a class="nav-link" href="#">
+                                Invoice
+                            </a></div>
+                        <img id="myImage5" class="plus" src="img/plus.png" onclick="performActions(event, 'invoice', 'myImage5')">
+                    </li>
+
+                    <div class="button-slide" id="invoiceButtons" style="display: none;">
+                        <div class="drop-menu"><p>Compose</p></div>
+                        <div class="drop-menu"><p>Debit</p></div>
+                        <div class="drop-menu"><p>Credit</p></div>
+                    </div>
+
+                    <li class="nav-item">
+                        <div class="nav-pic-link">
+                        <img class="img1" src="img/ads.png">
+                        <a class="nav-link" href="#">
+                            My ads
+                        </a></div>
+                        <img class="plus" src="img/plus.png">
+                    </li>
+                    <li class="nav-item">
+                        <div class="nav-pic-link">
+                        <img class="img1" src="img/calendar.png">
+                        <a class="nav-link" href="#">
+                            Calender
+                        </a></div>
+                        <img class="plus" src="img/plus.png">
+                    </li>
+                    <li class="nav-item">
+                        <div class="nav-pic-link">
+                        <img class="img1" src="img/star.png">
+                        <a class="nav-link" href="#">
+                            Feedback
+                        </a></div>
+                        <img class="plus" src="img/plus.png">
+                    </li>
+                    <li class="nav-item">
+                        <div class="nav-pic-link">
+                        <img class="img1" src="img/notebook.png">
+                        <a class="nav-link" href="#">
+                            Statements
+                        </a></div>
+                        <img class="plus" src="img/plus.png">
+                    </li>
+                    <li class="nav-item">
+                        <div class="nav-pic-link">
+                        <img class="img1" src="img/settings.png">
+                        <a class="nav-link" href="#">
+                            Settings
+                        </a></div>
+                        <img class="plus" src="img/plus.png">
+                    </li>
+                </ul>
+                <div class="container-fluid">
+                    <div class="collapse navbar-collapse">
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="centre">
+            <div class="head">
+                <h6>Dashboard</h6>
+                <p class="welcome-message">Welcome back Maria - Last log in on 15 November at 10:30 am</p>
+                <span class="add-widget">Add widget</span>
+                <img class="pluscircle" src="img/pluscircle.png">
+            </div>
+            <div class="content">
+                <div class="block">
+                    <div class="block-content">
+                        <div class="image"><img src="img/eye.png"></div>
+                        <div class="text-content"> <p class="text">TOTAL VIEW</p> <p class="number">121,459</p>
+                        </div>
+                    </div>
+                    <div class="line1"></div>
+                </div>
+                <div class="block">
+                    <div class="block-content">
+                        <div class="image"><img src="img/user.png"></div>
+                        <div class="text-content"> <p class="text">TOTAL USER</p> <p class="number">35,912</p></div>
+                    </div>
+                    <div class="line2"></div>
+                </div>
+                <div class="block">
+                    <div class="block-content">
+                        <div class="image"><img src="img/rocket.png"></div>
+                        <div class="text-content"> <p class="text">SERVER SPEED</p> <p class="number">1180 mbps</p></div>
+                    </div>
+                    <div class="line3"></div>
+                </div>
+                <div class="block">
+                    <div class="block-content">
+                        <div class="image"><img src="img/message.png"></div>
+                        <div class="text-content"> <p class="text">TOTAL MESSAGE</p><p class="number">2536</p></div>
+                    </div>
+                    <div class="line4"></div>
+                </div>
+                    <div class="graph">
+                        <div class="head-part">
+                           <div class="left-part">
+                               <p>Site views - 2023</p>
+                               <img class="point" src="img/pointer.png">
+                           </div>
+                            <img class="dot" src="img/threedot.png">
+                        </div>
+                        <div class="main-graph">
+                            <canvas class="my-line-chart" id="myLineChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="diagram">
+                            <div class="title">
+                                <p>Weekly earning</p>
+                                <img class="dot" src="img/threedot.png">
+                            </div>
+                            <div class="main-part">
+                                <canvas id="myBarChart" class="my-b-chart"></canvas>
+                            </div>
+                        </div>
+                        <div class="diagram">
+                            <div class="title">
+                                <p>Earn by country</p>
+                                <img class="dot" src="img/threedot.png">
+                            </div>
+                            <div class="main-content">
+                                <div class="dia">
+                                    <canvas id="myDChart" class="c-chart"></canvas>
+                                </div>
+                                <div class="description">
+                                   <div class="percent">
+                                       <div class="left-side">
+                                           <div class="circle1"></div>
+                                           <p class="country">United States</p>
+                                       </div>
+                                       <p class="amount">- 45%</p>
+                                   </div>
+                                    <div class="percent">
+                                        <div class="left-side">
+                                            <div class="circle2"></div>
+                                            <p class="country">Germany</p>
+                                        </div>
+                                        <p class="amount">- 23%</p>
+                                    </div>
+                                    <div class="percent">
+                                        <div class="left-side">
+                                            <div class="circle3"></div>
+                                            <p class="country">Australia</p>
+                                        </div>
+                                        <p class="amount">- 18%</p>
+                                    </div>
+                                    <div class="percent">
+                                        <div class="left-side">
+                                            <div class="circle4"></div>
+                                            <p class="country">England</p>
+                                        </div>
+                                        <p class="amount">- 12%</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <div class="wrapper1">
+                    <div class="block1">
+                        <div class="title1">
+                            <p>Contacts</p>
+                            <img class="dot" src="img/threedot.png">
+                        </div>
+                        <div class="main-body">
+                            <div class="contact">
+                                <div class="person1">
+                                    <img class="people" src="img/woman2.png">
+                                    <div class="text2">
+                                        <p class="name1">Amila Right</p>
+                                        <p class="pos">Fivedrid Corp</p>
+                                    </div>
+                                </div>
+                                <div class="message">
+                                    <img class="mail" src="img/mail.png">
+                                    <img class="envelope" src="img/message.png">
+                                </div>
+                            </div>
+                            <div class="contact">
+                                <div class="person1">
+                                    <img class="people" src="img/man1.png">
+                                    <div class="text2">
+                                        <p class="name1">Jone Cena</p>
+                                        <p class="pos">Troyosoft</p>
+                                    </div>
+                                </div>
+                                <div class="message">
+                                    <img class="mail" src="img/mail.png">
+                                    <img class="envelope" src="img/message.png">
+                                </div>
+                            </div>
+                            <div class="contact">
+                                <div class="person1">
+                                    <img class="people" src="img/woman1.png">
+                                    <div class="text2">
+                                        <p class="name1">Shila Mendez</p>
+                                        <p class="pos">AZ security</p>
+                                    </div>
+                                </div>
+                                <div class="message">
+                                    <img class="mail" src="img/mail.png">
+                                    <img class="envelope" src="img/message.png">
+                                </div>
+                            </div>
+                            <div class="contact">
+                                <div class="person1">
+                                    <img class="people" src="img/man2.png">
+                                    <div class="text2">
+                                        <p class="name1">Alex More</p>
+                                        <p class="pos">ZC software</p>
+                                    </div>
+                                </div>
+                                <div class="message">
+                                    <img class="mail" src="img/mail.png">
+                                    <img class="envelope" src="img/message.png">
+                                </div>
+                            </div>
+                            <div class="scontact">
+                                <input type="text" class="c-search" placeholder="Search contact...">
+                                <div class="c-m-glass">
+                                    <img class="c-glass" src="img/mglass.png">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block2">
+                        <div class="title1">
+                            <p>Review</p>
+                            <img class="dot" src="img/threedot.png">
+                        </div>
+                        <div class="main-body">
+                            <div class="review">
+                                <div class="stars">
+                                    <img class="star" src="img/fivestars.png">
+                                    <p class="time">30 Minute ago</p>
+                                </div>
+                                <p class="comment">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                    Lorem Ipsum has been the industry's standard dummy ever since...</p>
+                                <p class="person">- Sujit Dey</p>
+                            </div>
+                            <div class="review">
+                                <div class="stars">
+                                    <img class="star" src="img/fourstars.png">
+                                    <p class="time">1h 13 min ago</p>
+                                </div>
+                                <p class="comment">Lorem Ipsum is simply dummy text of the printing and
+                                    typesetting industry. Lorem Ipsum has been the industry's standard dummy
+                                    ever since...</p>
+                                <p class="person">- Sujit Dey</p>
+                            </div>
+                            <div class="review">
+                                <div class="stars">
+                                    <img class="star" src="img/threestars.png">
+                                    <p class="time"> 05 Dec 2015</p>
+                                </div>
+                                <p class="comment">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                    Lorem Ipsum has been the industry's standard dummy ever since...</p>
+                                <p class="person">- Sujit Dey</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrapper2">
+                    <div class="block3">
+                        <div class="title1">
+                            <p>Tasks</p>
+                            <img class="dot" src="img/threedot.png">
+                        </div>
+                        <div class="main-body">
+                            <div class="task">
+                                <div class="name">
+                                    <input type="checkbox" id="checkbox1">
+                                    <div class="title2">
+                                        <p class="p1">Upload February database</p>
+                                        <p class="p2">Added by Maria Riznyk</p>
+                                    </div>
+                                </div>
+                                <img class="cross" src="img/cross.png">
+                            </div>
+                            <div class="task">
+                                <div class="name">
+                                    <input type="checkbox" id="checkbox2">
+                                    <div class="title2">
+                                        <p class="p1">Contact Joy Miller</p>
+                                        <p class="p2">Added by Admin</p>
+                                    </div>
+                                </div>
+                                <img class="cross" src="img/cross.png">
+                            </div>
+                            <div class="task">
+                                <div class="name">
+                                    <input type="checkbox" id="checkbox3">
+                                    <div class="title2">
+                                        <p class="p1">Launch CCM</p>
+                                        <p class="p2">Added by Sucti Das</p>
+                                    </div>
+                                </div>
+                                <img class="cross" src="img/cross.png">
+                            </div>
+                            <div class="task">
+                                <div class="name">
+                                    <input type="checkbox" id="checkbox4">
+                                    <div class="title2">
+                                        <p class="p1">Transfer January Fand to account</p>
+                                        <p class="p2">Added by Admin</p>
+                                    </div>
+                                </div>
+                                <img class="cross" src="img/cross.png">
+                            </div>
+                            <div class="addtask">
+                                <input type="text" class="c-search" placeholder="Add new task...">
+                                <div class="c-m-glass">
+                                    <img src="img/plus.png">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block4">
+                        <div class="title1">
+                            <p>Radar Chart</p>
+                            <img class="dot" src="img/threedot.png">
+                        </div>
+                        <div class="main-body">
+                            <div class="chart">
+                                <canvas id="myRadarChart" class="my-r-chart"></canvas>
+                            </div>
+                            <div class="info">
+                                <div class="element">
+                                    <div class="dot1"></div>
+                                    <p>Product Sold</p>
+                                </div>
+                                <div class="element">
+                                    <div class="dot2"></div>
+                                    <p>Product Returned</p>
+                                </div>
+                                <div class="element">
+                                    <div class="dot3"></div>
+                                    <p>Got Review</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   <script>
+       function toggleButtons(event, buttonType) {
+           event.preventDefault();
+           var selectedButtons = document.getElementById(buttonType + 'Buttons');
+           selectedButtons.style.display = (selectedButtons.style.display === 'none' || selectedButtons.style.display === '') ? 'block' : 'none';
+       }
+
+       function performActions(event, buttonType, imId) {
+           toggleButtons(event, buttonType);
+           changeImage(imId);
+       }
+       function changeImage(imId) {
+           var image = document.getElementById(imId);
+           var newImagePath = (image.src.includes('img/plus.png')) ? 'img/minus.png' : 'img/plus.png';
+           image.src = newImagePath;
+       }
+       document.addEventListener('DOMContentLoaded', function () {
+           var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+           checkboxes.forEach(function (checkbox) {
+               checkbox.addEventListener('change', function () {
+                   console.log('Checkbox ' + checkbox.id + ' is ' + (checkbox.checked ? 'checked' : 'unchecked'));
+               });
+           });
+       });
+       var ctx = document.getElementById('myDChart').getContext('2d');
+       var myDoughnutChart = new Chart(ctx, {
+           type: 'doughnut',
+           data: {
+               datasets: [{
+                   data: [45, 23, 12, 18, 2],
+                   backgroundColor: ['#70e8de', '#408ed6', '#683aa7', '#d31c5c', '#23262d'],
+                   borderWidth: 0
+               }]
+           },
+           options: {
+               cutout: '65%',
+               responsive: false,
+               maintainAspectRatio: false
+           }
+       });
+       var ctx1 = document.getElementById('myBarChart').getContext('2d');
+       var myBarChart = new Chart(ctx1, {
+           type: 'bar',
+           data: {
+               labels: ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'],
+               datasets: [{
+                   label: 'Earning',
+                   data: [320, 80, 200, 510, 220, 170, 80],
+                   backgroundColor: '#212227',
+                   borderColor: '#212227',
+                   borderWidth: 0
+               }]
+           },
+           options: {
+               scales: {
+                   y: {
+                       beginAtZero: true
+                   }
+               }
+           }
+       });
+       var ctx3 = document.getElementById('myRadarChart').getContext('2d');
+       var myChart = new Chart(ctx3, {
+           type: 'radar',
+           data: {
+               labels: ['Wordpress', 'Psd', 'Java', 'Css', 'Html', 'Joomla'],
+               datasets: [{
+                   data: [100, 25, 50, 10, 70, 47],
+                   backgroundColor: '#d31c5c',
+                   borderWidth: 0,
+                   pointBackgroundColor: '#d31c5c',
+                   pointBorderColor: '#fff',
+                   pointBorderWidth: 0
+               }, {
+                   label: '',
+                   data: [60, 40, 80, 55, 65, 31],
+                   backgroundColor: '#408ed6',
+                   borderWidth: 0,
+                   pointBackgroundColor: '#408ed6',
+                   pointBorderColor: '#fff',
+                   pointBorderWidth: 0
+               }, {
+                       label: '',
+                       data: [60, 95, 67, 5, 40, 63],
+                       backgroundColor: '#70e8de',
+                       borderWidth: 0,
+                       pointBackgroundColor: '#70e8de',
+                       pointBorderColor: '#fff',
+                       pointBorderWidth: 0
+                   }]
+           },
+           options: {
+               plugins: {
+                   legend: {
+                       display: false
+                   }
+               }
+           }
+       });
+       var ctx4 = document.getElementById('myLineChart').getContext('2d');
+       var gradient = ctx4.createLinearGradient(100, 80, 0, 400);
+       gradient.addColorStop(0, '#70e8de');
+       gradient.addColorStop(1, '#d31c5c');
+       var myLineChart = new Chart(ctx4, {
+           type: 'line',
+           data: {
+               labels: ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
+               datasets: [{
+                   label: 'Coverage',
+                   data: [50, 100, 130, 250, 200, 170, 90, 150, 260, 250, 120, 230],
+                   backgroundColor: gradient,
+                   borderColor: '#70e8de',
+                   borderWidth: 2,
+                   pointBackgroundColor: '#70e8de',
+                   pointBorderColor: '#fff',
+                   pointBorderWidth: 2,
+               }]
+           },
+           options: {
+               scales: {
+                   y: {
+                       beginAtZero: true
+                   }
+               }
+           }
+       });
+   </script>
 </body>
 </html>

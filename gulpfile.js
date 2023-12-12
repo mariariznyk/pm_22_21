@@ -26,7 +26,7 @@ const watch_task = () => {
     watch('app/scss/*.scss', parallel(scss_task));
     watch('app/js/*.js', parallel(scripts_task));
 }
-const img_task = () => src('src / images /*.+ (jpg | jpeg | png | gif)')
+const img_task = () => src('app/img/*.{jpg,jpeg,png,gif}')
     .pipe (imagemin ({
         progressive: true,
         svgoPlugins: [{removeViewBox: false}],
